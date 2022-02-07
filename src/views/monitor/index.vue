@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import hello from './testError.js'
+
 export default {
   data() {
     return {
@@ -18,6 +20,10 @@ export default {
       ]
     }
   },
+
+  created() {
+    hello()
+  },
   computed: {
     str() {
       return this.a + 2
@@ -27,6 +33,8 @@ export default {
   methods: {
     clickHanld() {
       Promise.reject('test').then()
+      // let script = document.createElement('script')
+      // script.setAttribute('src', 'http://baidu.com/haha.js')
     }
   }
 }

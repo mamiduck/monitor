@@ -4,6 +4,7 @@ export function initGlobalError(Monitor) {
     const config = this._config
     // 获取全局错误
     window.addEventListener('error', (error) => {
+      console.log('window error: ', error)
       //执行钩子函数
       beforeProccess(this, config)
       //正式处理错误
